@@ -1,5 +1,19 @@
+
+body {
+   background-image: url("https://wallpapercave.com/wp/dxXh4Ss.jpg");
+   color: white;
+   font-weight: 700;
+}
+
+.jumbotron {
+   color: white;
+   font-weight: 700;
+   background: rgba(204, 204, 204, 0);
+   background: none;
+}
+
 #trekPic {
-   height: 500px;
-   width: 80%;
-   text-align: center;
+   height: 400px;
+   width: 400px;
+   float: right;
 }
