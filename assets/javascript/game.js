@@ -1,7 +1,7 @@
 // GLOBAL VARIABLES
 //--------------------------------------------------------------------------------------
 //Arrays and Varibles
-var wordOptions = ["kirk", "spock", "picard", "riker", "sulu", "ohura", "scotty", "laforge", "worf", "sisko", "janeway", "tuvok", "nelix", "dax"];
+var wordOptions = ["kirk", "spock", "picard", "data", "riker", "sulu", "uhura", "scotty", "laforge", "worf", "sisko", "janeway", "tuvok", "nelix", "dax", "odo"];
 var selectedWord = "";
 var lettersInWord = [];
 var numBlanks = 0;
@@ -25,6 +25,7 @@ function startGame() {
   guessesLeft = 9;
   wrongLetters = [];
   blanksAndSuccesses = [];
+  document.getElementById("trekPic").setAttribute("src", "assets/images/Star_Trek.jpg");
 
   //Populate Blanks and Successes
   for (var i = 0; i < numBlanks; i++) {
@@ -87,18 +88,70 @@ function roundComplete() {
   // Check if user won
   if (lettersInWord.toString() == blanksAndSuccesses.toString()) {
     winCount++;
-    
+
+    switch (selectedWord) {
+      case "kirk":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/kirkPic.jpg");
+        break;
+      case "spock":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/spockPic.jpg");
+        break;
+      case "picard":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/picardPic.jpg");
+        break;
+      case "data":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/dataPic.jpg");
+        break;
+      case "riker":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/rikerPic.jpg");
+        break;
+      case "sulu":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/suluPic.jpg");
+        break;
+      case "uhura":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/uhuraPic.jpg");
+        break;
+      case "scotty":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/scottyPic.jpg");
+        break;
+      case "laforge":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/laforgePic.jpg");
+        break;
+      case "worf":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/worfPic.jpg");
+        break;
+      case "sisko":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/siskoPic.jpg");
+        break;
+      case "janeway":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/janewayPic.jpg");
+        break;
+      case "tuvok":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/tuvokPic.jpg");
+        break;
+      case "nelix":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/nelixPic.jpg");
+        break;
+      case "dax":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/daxPic.jpg");
+        break;
+      case "odo":
+        document.getElementById("trekPic").setAttribute("src", "assets/images/odoPic.jpg");
+        break;
+
+    }
+
 
     //Update the win counter in the HTML
     document.getElementById("winCounter").innerHTML = winCount;
 
 
-    setTimeout(startGame, 500);
+    setTimeout(startGame, 1500);
   }
   //Check if user lost
   else if (guessesLeft == 0) {
     lossCount++;
-   
+
 
     //Update the HTML
     document.getElementById("lossCounter").innerHTML = lossCount;
